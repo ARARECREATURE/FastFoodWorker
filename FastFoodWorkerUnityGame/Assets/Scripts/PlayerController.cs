@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public GameObject _equipment1;
+    public GameObject _equipment2;
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -46,5 +49,14 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+
+    public void setEquipment(GameObject equipment)
+    {
+        _equipment1 = equipment;
+        equipment.SetActive(false);
+        Debug.Log("test1");
+    }
+    
+    
 }
 
